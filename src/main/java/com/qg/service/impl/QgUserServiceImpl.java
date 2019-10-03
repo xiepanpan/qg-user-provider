@@ -55,5 +55,14 @@ public class QgUserServiceImpl implements QgUserService {
         return qgUserMapper.batchDeleteQgUser(param);
     }
 
+    @Override
+    public QgUser queryQgUserByPhoneAndPwd(String phone, String pwd) throws Exception {
+        Map<String,String> param = new HashMap<>();
+        param.put("phone",phone);
+        param.put("password",pwd);
+
+        return qgUserMapper.queryQgUserByPhoneAndPwd(param);
+    }
+
 
 }

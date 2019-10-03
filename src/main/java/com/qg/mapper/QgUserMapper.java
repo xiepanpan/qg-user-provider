@@ -22,4 +22,6 @@ public interface QgUserMapper {
 
 	public Integer batchDeleteQgUser(Map<String,List<String>> params);
 
+	public QgUser queryQgUserByPhoneAndPwd(Map<String,String> params);
+
 }

@@ -138,4 +138,19 @@
             </foreach>
         )
     </delete>
+
+    <select id="queryQgUserByPhoneAndPwd" resultType="com.qg.pojo.QgUser" parameterType="java.util.Map">
+        select
+            id as id,
+            phone as phone,
+            password as password,
+            wxUserId as wxUserId,
+            realName as realName,
+            createdTime as createdTime,
+            updatedTime as updatedTime
+        from qg_user
+        <trim prefix="where" prefixOverrides="and | or">
+                and phone=#{phone} and password=#{password}
+        </trim>
+    </select>
 </mapper>
